@@ -4,22 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Опитування</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .hidden {
+            display: none;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        #reason-container {
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Цей файл був створений для того, щоб замінити проект, який в мене...</h1>
-        <p>Чи заслуговує цей файл на життя?</p>
-        <div class="buttons">
-            <button id="yes-btn">Так</button>
-            <button id="no-btn">Ні</button>
-        </div>
-        <div id="reason-container" class="hidden">
-            <input type="text" id="reason-input" placeholder="Чому :(?">
-            <button id="submit-reason">Надіслати</button>
-        </div>
-        <p id="response"></p>
+    <h1>Цей файл був створений для того, щоб замінити проект, який в мене...</h1>
+    <p>Чи заслуговує цей файл на життя?</p>
+    
+    <div id="buttons">
+        <button id="yes-btn">Так</button>
+        <button id="no-btn">Ні</button>
     </div>
+
+    <div id="reason-container" class="hidden">
+        <input type="text" id="reason-input" placeholder="Чому :(?">
+        <button id="submit-reason">Надіслати</button>
+    </div>
+
+    <p id="response"></p>
+
     <script src="script.js"></script>
 </body>
 </html>
