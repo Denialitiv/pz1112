@@ -1,12 +1,24 @@
-document.getElementById('yes-btn').addEventListener('click', function() {
-    document.getElementById('response').textContent = 'Дякую :)';
+const buttons = document.getElementById('buttons');
+const yesBtn = document.getElementById('yes-btn');
+const noBtn = document.getElementById('no-btn');
+const reasonContainer = document.getElementById('reason-container');
+const response = document.getElementById('response');
+
+// Обробка кнопки "Так"
+yesBtn.addEventListener('click', function() {
+    buttons.classList.add('hidden');
+    response.textContent = 'Дякую :)';
 });
 
-document.getElementById('no-btn').addEventListener('click', function() {
-    document.getElementById('reason-container').classList.remove('hidden');
+// Обробка кнопки "Ні"
+noBtn.addEventListener('click', function() {
+    buttons.classList.add('hidden');
+    reasonContainer.classList.remove('hidden');
 });
 
+// Обробка причини (якщо обрано "Ні")
 document.getElementById('submit-reason').addEventListener('click', function() {
     const reason = document.getElementById('reason-input').value;
-    document.getElementById('response').textContent = `Зрозуміло. Причина: ${reason}`;
+    reasonContainer.classList.add('hidden');
+    response.textContent = `Зрозуміло. Причина: ${reason || "не вказана"}`;
 });
